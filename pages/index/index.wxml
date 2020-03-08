@@ -1,0 +1,85 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+    <image class="home-background-image" src="http://cdn-icare.qingtime.cn/1548815172330_home-background-image.png" mode="cover"></image>
+    <view class="report-info">
+        <view class="report-info-container" bindtap="toHistory">
+            <image class="report-info-image-time" src="../../images/time.png" mode="cover"></image>
+            <view class="report-info-title">历史记录</view>
+        </view>
+        <view class="report-userInfo-container">
+            <view class="report-userInfo-message">
+                <view class="report-userInfo-title">{{personObj.trueName}} 已获取面相报告</view>
+                <view class="report-userInfo-num">已生成 {{total}} 份</view>
+            </view>
+            <image wx-if="personObj.avatar" class="userinfo-avatar" src="{{personObj.avatar}}" mode="aspectFill"></image>
+        </view>
+        <image class="report-info-image" src="../../images/report-image.png" mode="cover"></image>
+    </view>
+    <view class="home-info">
+        <view class="home-info-title">时光 面相探索</view>
+        <view class="home-info-container">阴阳五行，化生万物。相由心生，境随心转。古人经常从面部特征推算富贵时运。时光科技AI小组利用人脸识别等相关技术，结合相关典籍，帮助用户快速解读面相，将传统文化发扬光大。
+        </view>
+        <view class="home-info-image-container">
+            <view class="home-info-image-info">
+                <image class="home-info-image-info-image" src="../../images/home-1.png"></image>
+                <view class="home-info-image-info-text">面相学</view>
+            </view>
+            <view class="home-info-image-info">
+                <image class="home-info-image-info-image" src="../../images/home-2.png"></image>
+                <view class="home-info-image-info-text">人工智能</view>
+            </view>
+            <view class="home-info-image-info">
+                <image class="home-info-image-info-image" src="../../images/home-3.png"></image>
+                <view class="home-info-image-info-text">人脸定位</view>
+            </view>
+        </view>
+
+        <view class="home-background-info-text-warning">
+            <image class="home-background-info-text-warning-image" src="../../images/info-text-check-image.png" mode="cover"></image>
+            <view>我已阅读并同意
+                <span class="online-text" bindtap="toUpload">用户隐私协议</span>
+            </view>
+        </view>
+        <view>
+            <button class="button-left-image home-info-button" open-type="share" hover-class='none'>
+                <view class="home-info-text">邀请亲友</view>
+            </button>
+            <image class="button-left-image home-info-button-image" src="../../images/userInfo-left-button.png" alt="" mode="cover"></image>
+            <button class="button-right-image home-info-button" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+                <view class="home-info-text">开始探索</view>
+            </button>
+            <image class="button-right-image home-info-button-image home-info-right-button" src="../../images/userInfo-right-button.png" mode="cover"></image>
+        </view>
+
+    </view>
+    <view class="home-background" wx:if="{{modalState}}">
+        <view class="home-background-container">
+            <view class="home-background-top">
+                <image class="home-background-top-image" src="../../images/home-background-top-image.png" mode="cover"></image>
+            </view>
+            <view class="home-background-info">
+                <image class="home-background-info-image" src="http://cdn-icare.qingtime.cn/1548815240826_home-background-info-image.png" mode="cover"></image>
+                <view class="home-background-info-text">
+                    <view class="home-background-info-text-title">面相宝典说明</view>
+                    <view class="home-background-info-text-info">面不独论，面相研究由3位国内资深相学大师整理的面相学基本概念，和5位人工智能工程师运用深度神经网络学习语言让AI学习近20万拥有108个定位点的真实人脸样本数据，AI测算最精准的数据，匹配面相学大师倾囊相守的相学经验，我们尽最大可能真实还原《面相学》这一中国传统文化的精髓，希望可以展示其中的规律之美。
+                    </view>
+
+                    <view class="button-group home-background-info-text-button">
+                        <view class="home-info-text" bindtap="toUpload">取消</view>
+                    </view>
+                    <image class="button-image home-background-info-text-image" src="../../images/unuserInfo-button.png" mode="cover"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

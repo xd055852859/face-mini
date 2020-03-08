@@ -1,0 +1,14 @@
+<!--pages/home/home.wxml-->
+<view class="container home-container">
+  <view class="home-view">
+    <view class="home-logo-view">
+      <image class="home-logo" src="../../images/icon.png" mode="cover"></image>
+    </view>
+    <view class="home-title">面相探索</view>
+    <view class="home-subtitle">相由心生</view>
+    <view class="home-subtitle">解码你的人生</view>
+    <view class="home-button">
+      <view class="home-info-text" bindtap="toUrl">探索</view>
+    </view>
+  </view>
+</view>

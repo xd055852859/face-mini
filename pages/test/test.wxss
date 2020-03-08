@@ -1,0 +1,6 @@
+/* pages/test/test.wxss */
+
+.test {
+    height: 90rpx;
+    width: 100rpx;
+}

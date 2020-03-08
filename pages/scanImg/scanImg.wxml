@@ -1,0 +1,46 @@
+<!--pages/scanImg/scanImg.wxml-->
+<view class="container scanImg-container">
+    <view class="scanImg-img-info">
+        <view class="scanImg-img-info-view">
+            <image class="scanImg-img-info-background" src="../../images/scanImg-img-info-background.png" mode="cover"></image>
+            <view class="scanImg-img-info-background-view">
+                <view  wx-if="{{!buttonState}}" class="scanImg-img-info-view-changeView"></view>
+                <canvas canvas-id="canvas" class="scanImg-canvas" style="width:{{viewWidth}};height:{{viewHeight}};top:{{viewTop}};left:{{viewLeft}}"></canvas>
+                <canvas canvas-id="faceCanvas" class="scanImg-myCanvas" style="width:{{viewWidth}};height:{{viewHeight}};top:{{viewTop}};left: {{viewLeft}}"></canvas>
+                <canvas canvas-id="faceBackgroundCanvas" class="scanImg-backgroundCanvas" style="width:{{viewWidth}};height:{{viewHeight}};top:{{viewTop}};left:{{viewLeft}}"></canvas>
+
+                <image wx-if="{{!buttonState}}" class="scanImg-img-info-view-img" src="../../images/scanImg-img-info-view-img.png" mode="cover"></image>
+            </view>
+        </view>
+        <!-- 扫描效果 -->
+    </view>
+    <view class="scanImg-message">
+        <view class="scanImg-message-info">
+            <view>人脸识别定位</view>
+            <view class="scanImg-message-bar">
+                <view class="scanImg-message-bar-progress">
+                    <progress class="scanImg-message-progress" percent="{{upProcess}}" activeColor="#CCCCCC" active="true" active-mode="forwards" stroke-width="10rpx" border-radius="10rpx" />
+                    <image src="{{upSrc}}" class="scanImg-message-img" mode="aspectFit"></image>
+                </view>
+            </view>
+            <view>五官轮廓分析</view>
+            <view class="scanImg-message-bar">
+                <view class="scanImg-message-bar-progress">
+                    <progress class="scanImg-message-progress" percent="{{middleProcess}}" activeColor="#CCCCCC" active="true" active-mode="forwards" stroke-width="10rpx" border-radius="10rpx" />
+                    <image src="{{middleSrc}}" class="scanImg-message-img" mode="aspectFit"></image>
+                </view>
+            </view>
+            <view>生成面相报告</view>
+            <view class="scanImg-message-bar">
+                <view class="scanImg-message-bar-progress">
+                    <progress class="scanImg-message-progress" percent="{{downProcess}}" activeColor="#CCCCCC" active="true" active-mode="forwards" stroke-width="10rpx" border-radius="10rpx" />
+                    <image src="{{downSrc}}" class="scanImg-message-img" mode="aspectFit"></image>
+                </view>
+            </view>
+        </view>
+        <view class="button-group scanImg-button" wx-if="{{buttonState}}">
+            <view class="scanImg-button-text" bindtap="toReport">面相报告解读</view>
+        </view>
+        <image wx-if="{{buttonState}}" class="button-image scanImg-button-image" src="../../images/userInfo-button.png" mode="cover"></image>
+    </view>
+</view>

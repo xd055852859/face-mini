@@ -1,0 +1,17 @@
+<!--pages/history/history.wxml-->
+<view class="container" style="justify-content:{{historyData.length>0?'':'center'}};height:auto">
+    <block wx:if="{{historyData.length>0}}">
+        <view class="history-container" wx:for="{{historyData}}" wx:key="index" wx:for-index="index" wx:for-item="item" data-key="{{item._key}}" bindtap="toReport">
+            <image src="{{url+item.filePath}}" class="history-image" mode="aspectFill"></image>
+            <view>
+                <view class="history-container-title">{{item.reportName}}的面相报告</view>
+                <view class="history-container-time">{{item.createTime}}</view>
+            </view>
+        </view>
+    </block>
+    <view class="history-empty" wx:else>
+        <image src="../../images/empty.png" class="history-empty-image"  mode="aspectFill"></image>
+        <view class="history-text">您还没有测过面相哦</view>
+        <view class="history-text">快去上传照片试试吧</view>
+    </view>
+</view>

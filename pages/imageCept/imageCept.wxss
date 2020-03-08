@@ -1,0 +1,23 @@
+/* pages/imageCept/imageCept.wxss */
+
+.imageCept {
+    width: 375px;
+    height: 500px;
+    position: relative;
+}
+
+.myCanvas, .backgroundCanvas, .coverView {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.myCanvas {
+    z-index: 3;
+}
+
+.coverView {
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}

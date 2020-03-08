@@ -1,0 +1,28 @@
+<view class="container">
+    <view class="uploadImg-title">您可选择打开相册或直接拍照</view>
+    <view class="uploadImg-bigImg">
+        <image class="uploadImg-bigImg-person" src="http://cdn-icare.qingtime.cn/1548815328635_uploadImg-bigImg-person.png" mode="cover"></image>
+        <view class="uploadImg-bigImg-title">照片示例</view>
+    </view>
+    <view class="uploadImg-item-content">
+        <view class="uploadImg-nameInput">
+            <input bindinput="getName" placeholder="请输入姓名" class="nameInput" value="{{nickName}}" />
+        </view>
+        <view class="uploadImg-item-title">满足以下要求结果更准确</view>
+        <view wx:for="{{uploadImgArr}}" wx:for-index="index" wx:for-item="item" class="uploadImg-item-info" wx:key="index">
+            <!-- <image class="uploadImg-item-left" src="../../images/uploadImg-item-left.png" mode="cover"></image> -->
+            <image class="uploadImg-warning-image" src="../../images/info-text-check-image.png" mode="cover"></image>
+            <view class="uploadImg-item-label">
+                <view>{{item}}</view>
+            </view>
+            <!-- <image class="uploadImg-item-left" src="../../images/uploadImg-item-right.png" mode="cover"></image> -->
+        </view>
+    </view>
+    <view class="button-group uploadImg-button">
+        <view class="uploadImg-button-text" bindtap="uploadImg">拍照/上传美照</view>
+    </view>
+    <image class="button-image uploadImg-button-image" src="../../images/userInfo-button.png" mode="cover"></image>
+    <loading hidden="{{hidden}}">
+        加载中...
+    </loading>
+</view>

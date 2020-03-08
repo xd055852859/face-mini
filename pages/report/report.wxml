@@ -1,0 +1,155 @@
+<!--pages/report/report.wxml-->
+<view class="container">
+    <image class="report-background" src="http://cdn-icare.qingtime.cn/1548815282118_report-background.png" mode="aspectFill"></image>
+    <image class="report-avatar" src="{{uploadImg}}" mode="aspectFill"></image>
+    <view class="report-name" mode="aspectFill">{{name}}</view>
+    
+    <view class="report-message-container">
+        <view class="report-message-top">
+            <image class="report-message-top-image" src="../../images/home-background-top-image.png" mode="cover"></image>
+        </view>
+        <view class="report-message-info">
+            <image class="report-message-info-image" src="http://cdn-icare.qingtime.cn/1548815240826_home-background-info-image.png" mode="cover"></image>
+            <view class="report-message-info-text-title">面相概述</view>
+            <view class="report-message-info-text">
+                <view class="report-message-info-text-subtitle">上停</view>
+                <view class="report-message-info-canvas" style="width:{{viewWidth}};height:{{viewHeight}}">
+                    <canvas canvas-id="topAreaBackgroundCanvas" class="backgroundCanvas" style="width:{{viewWidth}};height:{{viewHeight}}"></canvas>
+                    <canvas canvas-id="topAreaCanvas" class="myCanvas" style="width:{{viewWidth}};height:{{viewHeight}}"></canvas>
+                    <image src="{{uploadImg}}" class="backgroundImage" style="width:{{viewWidth}};height:{{viewHeight}}"></image>
+                    <view class="coverView" style="width:{{viewWidth}};height:{{viewHeight}}"></view>
+                </view>
+                <view class="report-message-info-text-info">{{reportArr[5]}}</view>
+                <view class="report-message-info-text-subtitle">中停</view>
+                <view class="report-message-info-canvas" style="width:{{viewWidth}};height:{{viewHeight}}">
+                    <canvas canvas-id="middleAreaBackgroundCanvas" class="backgroundCanvas" style="width:{{viewWidth}};height:{{viewHeight}}"></canvas>
+                    <canvas canvas-id="middleAreaCanvas" class="myCanvas" style="width:{{viewWidth}};height:{{viewHeight}}"></canvas>
+                    <image src="{{uploadImg}}" class="backgroundImage" style="width:{{viewWidth}};height:{{viewHeight}}"></image>
+                    <view class="coverView" style="width:{{viewWidth}};height:{{viewHeight}}"></view>
+                </view>
+                <view class="report-message-info-text-info">{{reportArr[6]}}</view>
+                <view class="report-message-info-text-subtitle">下停</view>
+                <view class="report-message-info-canvas" style="width:{{viewWidth}};height:{{viewHeight}}">
+                    <canvas canvas-id="bottomAreaBackgroundCanvas" class="backgroundCanvas" style="width:{{viewWidth}};height:{{viewHeight}}"></canvas>
+                    <!-- <canvas canvas-id="bottomAreaeCoverCanvas" class="coverView" style="width:{{viewWidth}};height:{{viewHeight}}"></canvas> -->
+                    <canvas canvas-id="bottomAreaCanvas" class="myCanvas" style="width:{{viewWidth}};height:{{viewHeight}}"></canvas>
+                    <image src="{{uploadImg}}" class="backgroundImage" style="width:{{viewWidth}};height:{{viewHeight}}"></image>
+                    <view class="coverView" style="width:{{viewWidth}};height:{{viewHeight}}"></view>
+                </view>
+                <view class="report-message-info-text-info">{{reportArr[7]}}</view>
+            </view>
+        </view>
+        <view class="report-message-info" style="margin-top:-20rpx">
+            <image class="report-message-leftIcon" src="../../images/leftIcon.png"></image>
+            <image class="report-message-rightIcon" src="../../images/rightIcon.png"></image>
+            <image class="report-message-info-image" src="http://cdn-icare.qingtime.cn/1548815240826_home-background-info-image.png" mode="cover"></image>
+            <view class="report-message-info-text-title" style="margin-top:85rpx">五官分析</view>
+            <view class="report-message-info-text" wx:for="{{reportNameArr}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                <view class="report-message-info-text-subtitle">{{reportNameArr[index]}}</view>
+                <view class="report-message-info-canvas" style="width:{{viewWidth}};height:{{viewHeight}}">
+                    <canvas canvas-id="{{reportEnNameArr[index]}}BackgroundCanvas" class="backgroundCanvas" style="width:{{viewWidth}};height:{{viewHeight}}"></canvas>
+                    <canvas canvas-id="{{reportEnNameArr[index]}}Canvas" class="myCanvas" style="width:{{viewWidth}};height:{{viewHeight}}"></canvas>
+                    <image src="{{uploadImg}}" class="backgroundImage" style="width:{{viewWidth}};height:{{viewHeight}}"></image>
+                    <view class="coverView" style="width:{{viewWidth}};height:{{viewHeight}}"></view>
+                </view>
+                <view class="report-message-info-text-info">{{reportArr[index]}}</view>
+            </view>
+        </view>
+        <view class="report-view">
+            <view class="report-container report-save">
+                <view class="report-button-view">
+                    <view class="report-button" bindtap="saveReport">保存</view>
+                </view>
+                <image class="report-image" src="../../images/report-leftButton.png" mode="cover"></image>
+            </view>
+            <view class="report-container report-again">
+                <view class="report-button-view">
+                    <view class="report-button" bindtap="toIndex">再玩一次</view>
+                </view>
+                <image class="report-image" src="../../images/report-middleButton.png" mode="cover"></image>
+            </view>
+            <view class="report-container report-share" wx:if="{{reportKey}}">
+                <view class="report-button-view">
+                    <button class="report-button" open-type="share">分享给好友</button>
+                </view>
+                <image class="report-image" src="../../images/report-rightButton.png" mode="cover"></image>
+            </view>
+        </view>
+        <view class="report-message-url">
+            <image class="report-message-url-image" src="http://cdn-icare.qingtime.cn/1548833140128_report-message-url-background.png" mode="cover"></image>
+            <view class="report-message-url-item first-url-item">
+                <image class="report-message-url-item-image" src="../../images/url1.png" mode="cover"></image>
+                <view class="report-message-url-item-text" bindtap="toWeb" data-webname="https://f.qingtime.cn">
+                    <view class="report-message-url-item-text-title">家庭树</view>
+                    <view class="report-message-url-item-text-subtitle">记录成长的每个瞬间</view>
+                    <view class="report-message-url-item-text-info">
+                        <view class="report-message-url-item-text-info-button">谱卷攻略</view>
+                        <view class="report-message-url-item-text-info-msg">注册获赠18谱券</view>
+                    </view>
+                </view>
+            </view>
+            <view class="report-message-url-item">
+                <image class="report-message-url-item-image" src="../../images/url1.png" mode="cover"></image>
+                <view class="report-message-url-item-text" bindtap="toWeb" data-webname="https://app.qingtime.cn">
+                    <view class="report-message-url-item-text-title">时光宝典</view>
+                    <view class="report-message-url-item-text-subtitle">记录成长的每个瞬间</view>
+                    <view class="report-message-url-item-text-info">
+                        <view class="report-message-url-item-text-info-button">谱卷攻略</view>
+                        <view class="report-message-url-item-text-info-msg">注册获赠88谱券</view>
+                    </view>
+                </view>
+            </view>
+            <view class="report-message-url-item">
+                <image class="report-message-url-item-image" src="../../images/url2.png" mode="cover"></image>
+                <view class="report-message-url-item-text" bindtap="toWeb" data-webname="https://g.qingtime.cn">
+                    <view class="report-message-url-item-text-title">家谱探索</view>
+                    <view class="report-message-url-item-text-subtitle">快速发现你感兴趣的家谱</view>
+                    <view class="report-message-url-item-text-info">
+                        <view class="report-message-url-item-text-info-button">谱卷攻略</view>
+                        <view class="report-message-url-item-text-info-msg">注册获赠18谱券</view>
+                    </view>
+                </view>
+            </view>
+            <view class="report-message-url-item">
+                <image class="report-message-url-item-image" src="../../images/url2.png" mode="cover"></image>
+                <view class="report-message-url-item-text" bindtap="toWeb" data-webname="https://superbible.qingtime.cn">
+                    <view class="report-message-url-item-text-title">时光 姓氏宝典</view>
+                    <view class="report-message-url-item-text-subtitle">发现你的姓氏密码</view>
+                    <view class="report-message-url-item-text-info">
+                        <view class="report-message-url-item-text-info-button">谱卷攻略</view>
+                        <view class="report-message-url-item-text-info-msg">注册获赠18谱券</view>
+                    </view>
+                </view>
+            </view>
+            <image class="report-message-url-item-wait" src="../../images/report-message-url-item-wait.png" mode="cover"></image>
+            <view class="report-message-url-item">
+                <image class="report-message-url-item-image" src="../../images/url3.png" mode="cover"></image>
+                <view class="report-message-url-item-text">
+                    <view class="report-message-url-item-text-title">时光 中国祠堂网</view>
+                    <view class="report-message-url-item-text-subtitle">网罗全国姓氏祠堂</view>
+                </view>
+            </view>
+            <view class="report-message-url-item">
+                <image class="report-message-url-item-image" src="../../images/url4.png" mode="cover"></image>
+                <view class="report-message-url-item-text">
+                    <view class="report-message-url-item-text-title">时光 中华寻根网</view>
+                    <view class="report-message-url-item-text-subtitle">原来你的家人这么多</view>
+                </view>
+            </view>
+            <view class="report-message-url-item">
+                <image class="report-message-url-item-image" src="../../images/url5.png" mode="cover"></image>
+                <view class="report-message-url-item-text">
+                    <view class="report-message-url-item-text-title">时光 基因祖源网</view>
+                    <view class="report-message-url-item-text-subtitle">发现基因密码，探索亲情祖源</view>
+                </view>
+            </view>
+            <view class="report-message-url-item">
+                <image class="report-message-url-item-image" src="../../images/url6.png" mode="cover"></image>
+                <view class="report-message-url-item-text">
+                    <view class="report-message-url-item-text-title">时光 中华姓氏源流图</view>
+                    <view class="report-message-url-item-text-subtitle">姓氏源流一目了然，原来你的祖先在这里</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

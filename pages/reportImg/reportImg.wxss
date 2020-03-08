@@ -1,0 +1,17 @@
+/* pages/reportImg/reportImg.wxss */
+
+.reportImg {
+  width: 600rpx;
+  height:2805rpx;
+  position: relative;
+  z-index: 2;
+}
+
+.reportDownIcon {
+  width: 88rpx;
+  height: 88rpx;
+  position: fixed;
+  top: 10rpx;
+  right: 10rpx;
+  z-index: 5;
+}

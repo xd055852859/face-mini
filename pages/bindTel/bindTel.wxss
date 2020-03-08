@@ -1,0 +1,53 @@
+/* pages/bindTel/bindTel.wxss */
+
+.bindtel-container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin-top: 80rpx;
+    border-bottom: 2rpx solid #999;
+    font-size: 32rpx;
+}
+
+.bindtel-image {
+    width: 80rpx;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+}
+
+.code-button {
+    height: 70rpx;
+    width: 280rpx;
+    background-color: #85a8e6;
+    color: #fff;
+    border-radius: 10rpx;
+    line-height: 70rpx;
+    text-align: center;
+}
+
+.sendCode {
+     width: 400rpx;
+    background: #b5b5b5;
+    color: #fff;
+}
+
+.binTel-text-button {
+    bottom: 340rpx;
+    /* background: #85a8e6; */
+    border-radius: 4px;
+    z-index: 3;
+}
+
+.binTel-info-text {
+    z-index: 3;
+    font-size: 34rpx;
+    color: #fff;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.binTel-background-text-image {
+    bottom: 340rpx;
+    z-index: 2;
+}

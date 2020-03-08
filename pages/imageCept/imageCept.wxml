@@ -1,0 +1,31 @@
+<!--pages/imageCept/imageCept.wxml-->
+<!-- <text>pages/imageCept/imageCept.wxml</text> -->
+<!-- <view class="text" style="width:100rpx;height:100rpx"><canvas canvas-id="eyeCanvas" class="myCanvas" style="width:{{eyeWidth}};height:{{eyeHeight}}"></canvas></view> -->
+<view class="imageCept">
+    <canvas canvas-id="eyebrowCanvas" class="myCanvas" style="width:{{eyebrowWidth}};height:{{eyebrowHeight}}"></canvas>
+    <view class="coverView" style="width:{{eyebrowWidth}};height:{{eyebrowHeight}}"></view>
+    <canvas canvas-id="eyebrowBackgroundCanvas" class="backgroundCanvas" style="width:{{eyebrowWidth}};height:{{eyebrowHeight}}"></canvas>
+</view>
+<view class="imageCept">
+    <canvas canvas-id="eyeCanvas" class="myCanvas" style="width:{{eyeWidth}};height:{{eyeHeight}}"></canvas>
+    <view class="coverView" style="width:{{eyeWidth}};height:{{eyeHeight}}"></view>
+    <canvas canvas-id="eyeBackgroundCanvas" class="backgroundCanvas" style="width:{{eyeWidth}};height:{{eyeHeight}}"></canvas>
+</view>
+<view class="imageCept">
+    <canvas canvas-id="faceCanvas" class="myCanvas" style="width:{{faceWidth}};height:{{faceHeight}}"></canvas>
+    <view class="coverView" style="width:{{faceWidth}};height:{{faceHeight}}"></view>
+    <canvas canvas-id="faceBackgroundCanvas" class="backgroundCanvas" style="width:{{faceWidth}};height:{{faceHeight}}"></canvas>
+</view>
+<view class="imageCept">
+    <canvas canvas-id="mouthCanvas" class="myCanvas" style="width:{{mouthWidth}};height:{{mouthHeight}}"></canvas>
+    <view class="coverView" style="width:{{mouthWidth}};height:{{mouthHeight}}"></view>
+    <canvas canvas-id="mouthBackgroundCanvas" class="backgroundCanvas" style="width:{{mouthWidth}};height:{{mouthHeight}}"></canvas>
+</view>
+<view class="imageCept">
+    <canvas canvas-id="noseCanvas" class="myCanvas" style="width:{{noseWidth}};height:{{noseHeight}}"></canvas>
+    <view class="coverView" style="width:{{noseWidth}};height:{{noseHeight}}"></view>
+    <canvas canvas-id="noseBackgroundCanvas" class="backgroundCanvas" style="width:{{noseWidth}};height:{{noseHeight}}"></canvas>
+</view>
+<!-- <canvas canvas-id="faceCanvas" class="myCanvas" style="width:{{faceWidth}};height:{{faceHeight}}"></canvas>
+<canvas canvas-id="mouthCanvas" class="myCanvas" style="width:{{mouthWidth}};height:{{mouthHeight}}"></canvas>
+<canvas canvas-id="noseCanvas" class="myCanvas" style="width:{{noseWidth}};height:{{noseHeight}}"></canvas> -->

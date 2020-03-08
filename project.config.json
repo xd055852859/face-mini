@@ -1,0 +1,67 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"uglifyFileName": true,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.7",
+	"appid": "wxca52e693f0d4d111",
+	"projectname": "face",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": 0,
+					"name": "测试转发",
+					"pathName": "pages/report/report",
+					"query": "reportKey=464122215",
+					"scene": 1036,
+					"referrerInfo": {
+						"appId": "wxca52e693f0d4d111"
+					}
+				},
+				{
+					"id": -1,
+					"name": "测试转发",
+					"pathName": "pages/report/report",
+					"query": "reportKey=464122215",
+					"scene": 1008
+				}
+			]
+		}
+	}
+}

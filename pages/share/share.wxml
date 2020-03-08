@@ -1,0 +1,4 @@
+<!--pages/share/share.wxml-->
+<image class="share-background-image" src="http://cdn-icare.qingtime.cn/1555318136747_shareBackground.png" mode="cover"></image>
+<button class="share-button" open-type="share" hover-class='none'></button>
+<image class="share-background-button" src="../../images/shareBackgroundButton.png" mode="cover"></image>

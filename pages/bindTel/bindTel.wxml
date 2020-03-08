@@ -1,0 +1,20 @@
+<!--pages/bindTel/bindTel.wxml-->
+<view class="container" style="paddingTop:200rpx;boxSizing:border-box;position:relative">
+    <view class="bindtel-container">
+        <view class="bindtel-image">
+            <image src="../../images/tel.png" class="bindtel-icon" style="height:43rpx;width:23rpx"></image>
+        </view>
+        <input bindinput="getMobile" placeholder="手机号" />
+    </view>
+    <view class="bindtel-container">
+        <view class="bindtel-image">
+            <image src="../../images/code.png" class="bindtel-icon" style="height:40rpx;width:37rpx"></image>
+        </view>
+        <input bindinput="getCode" placeholder="验证码" maxlength="4" type="number"/>
+        <view class="code-button {{codeState?'sendCode':''}}" bindtap="{{codeState?'':'sendVercode'}}">{{codeState?'已发送验证码('+num+')':'验证'}}</view>
+    </view>
+    <view class="button-group binTel-text-button">
+        <view class="binTel-info-text" bindtap="bindMobile">绑定手机号</view>
+    </view>
+    <image class="button-image binTel-background-text-image" src="../../images/userInfo-button.png" mode="cover"></image>
+</view>

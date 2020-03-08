@@ -1,0 +1,5 @@
+<!--pages/reportImg/reportImg.wxml-->
+<view class="container" id="container">
+<image wx:if="{{reportImg}}" src="{{reportImg}}?imageView2/0/h/300"  class="reportImg"></image>
+<image src="../../images/downIcon.png" class="reportDownIcon" bindtap='downloadImg'></image>
+</view>
